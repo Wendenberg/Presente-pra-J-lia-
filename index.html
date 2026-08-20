@@ -1,203 +1,922 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Para o meu amor ❤️</title>
+<title>Nossos momentos incríveis juntos ❤️</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #fff3f7, #ffdce8);
-            color: #4a2935;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .hero {
-            text-align: center;
-            padding: 55px 15px 35px;
-        }
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #07101f;
+    color: white;
+    overflow-x: hidden;
+}
 
-        .heart {
-            font-size: 55px;
-        }
+/* =========================
+   TELA INICIAL
+========================= */
 
-        h1 {
-            font-size: clamp(38px, 8vw, 64px);
-            color: #c93667;
-            margin: 10px 0;
-        }
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-        .subtitle {
-            font-size: 20px;
-            line-height: 1.6;
-        }
+    position: relative;
+    overflow: hidden;
 
-        .card {
-            background: white;
-            border-radius: 25px;
-            padding: 25px;
-            margin: 22px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
-        }
+    background:
+        radial-gradient(circle at 20% 20%, #e6394645, transparent 30%),
+        radial-gradient(circle at 80% 80%, #1d4f9140, transparent 35%),
+        linear-gradient(145deg, #050b16, #14213d 55%, #70141e);
+}
 
-        h2 {
-            color: #c93667;
-            margin-top: 0;
-        }
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 25px;
+    animation: aparecer 1.5s ease;
+}
 
-        .message {
-            font-size: 18px;
-            line-height: 1.8;
-        }
+.spider {
+    font-size: 65px;
+    margin-bottom: 20px;
+    animation: flutuar 3s ease-in-out infinite;
+}
 
-        .photos {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    text-shadow: 0 8px 30px #000;
+}
 
-        .memory {
-            margin: 0;
-        }
+.hero p {
+    font-size: 1.2rem;
+    margin: 25px auto 35px;
+    max-width: 650px;
+    opacity: .9;
+}
 
-        .memory img {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
-            border-radius: 18px;
-            display: block;
-        }
+.btn {
+    display: inline-block;
+    padding: 16px 35px;
 
-        .caption {
-            text-align: center;
-            font-size: 17px;
-            font-weight: bold;
-            margin: 12px 0 0;
-        }
+    background: linear-gradient(135deg, #e63946, #a91420);
+    color: white;
 
-        footer {
-            text-align: center;
-            padding: 35px 10px;
-            font-size: 18px;
-        }
+    border-radius: 50px;
 
-        @media (max-width: 650px) {
-            .photos {
-                grid-template-columns: 1fr;
-            }
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
 
-            .memory img {
-                aspect-ratio: 4 / 5;
-            }
-        }
-    </style>
+    box-shadow: 0 10px 35px #0008;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+}
+
+/* TEIAS */
+
+.web {
+    position: absolute;
+    inset: 0;
+
+    opacity: .12;
+
+    background-image:
+        linear-gradient(30deg, transparent 48%, white 49%, transparent 50%),
+        linear-gradient(150deg, transparent 48%, white 49%, transparent 50%),
+        linear-gradient(90deg, transparent 49%, white 50%, transparent 51%);
+
+    background-size: 170px 170px;
+}
+
+/* =========================
+   HISTÓRIA
+========================= */
+
+.story {
+    background: #f8f8fb;
+    color: #222;
+    padding: 90px 20px;
+}
+
+.story-container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.kicker {
+    color: #e63946;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: .85rem;
+}
+
+h2 {
+    color: #14213d;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    margin: 10px 0 20px;
+}
+
+.intro {
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+/* LINHA DO TEMPO */
+
+.timeline {
+    position: relative;
+    margin-top: 60px;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: linear-gradient(
+        #e63946,
+        #14213d,
+        #e63946
+    );
+}
+
+.card {
+    position: relative;
+
+    margin-left: 55px;
+    margin-bottom: 45px;
+
+    padding: 28px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow: 0 12px 40px #14213d18;
+
+    border: 1px solid #eeeeee;
+}
+
+.dot {
+    position: absolute;
+
+    left: -45px;
+    top: 28px;
+
+    width: 20px;
+    height: 20px;
+
+    background: #e63946;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 6px white,
+        0 0 0 9px #e6394640;
+}
+
+.date {
+    color: #e63946;
+    font-weight: bold;
+    font-size: .85rem;
+}
+
+.card h3 {
+    color: #14213d;
+    font-size: 1.6rem;
+    margin: 8px 0 12px;
+}
+
+.card p {
+    line-height: 1.8;
+}
+
+/* =========================
+   ESPAÇO PARA FOTOS
+========================= */
+
+.photo {
+    margin-top: 20px;
+
+    width: 100%;
+    min-height: 280px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #14213d,
+            #e63946
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* =========================
+   MÚSICA
+========================= */
+
+.music {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(circle at center, #244d7a, transparent 40%),
+        linear-gradient(160deg, #050b16, #14213d);
+}
+
+.music-container {
+    max-width: 750px;
+}
+
+.music h2 {
+    color: white;
+}
+
+.music p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.spotify {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.spotify iframe {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+/* =========================
+   HOMEM-ARANHA
+========================= */
+
+.spiderman {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(circle at 50% 30%, #e6394650, transparent 35%),
+        linear-gradient(150deg, #07101f, #122c50);
+}
+
+.spiderman-container {
+    max-width: 750px;
+}
+
+.spiderman-icon {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.spiderman p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+/* =========================
+   DECLARAÇÃO FINAL
+========================= */
+
+.final {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(circle at center, #a9142040, transparent 40%),
+        linear-gradient(
+            145deg,
+            #060b14,
+            #71151f
+        );
+}
+
+.final-container {
+    max-width: 800px;
+}
+
+.final h2 {
+    color: white;
+}
+
+.final-text {
+    font-size: 1.2rem;
+
+    line-height: 2;
+
+    margin-top: 25px;
+}
+
+.signature {
+    margin-top: 35px;
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes flutuar {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px) {
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .card {
+        margin-left: 42px;
+        padding: 22px;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .dot {
+        left: -37px;
+    }
+
+    .photo {
+        min-height: 220px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="container">
 
-        <section class="hero">
-            <div class="heart">❤️</div>
+<!-- =================================
+     TELA INICIAL
+================================= -->
 
-            <h1>Para o meu amor</h1>
+<section class="hero">
 
-            <p class="subtitle">
-                Uma pequena página para guardar um pouquinho
-                da nossa história.
-            </p>
-        </section>
+    <div class="web"></div>
 
+    <div class="hero-content">
 
-        <section class="card">
+        <div class="spider">
+            🕷️
+        </div>
 
-            <h2>Amor,</h2>
+        <h1>
+            Nossos momentos incríveis juntos ❤️
+        </h1>
 
-            <p class="message">
-                Eu queria fazer algo especial para guardar alguns
-                dos nossos momentos.
+        <p>
+            Uma pequena história sobre nós dois...
+            e sobre tudo que ainda vamos viver.
+        </p>
 
-                Cada lembrança ao seu lado é importante para mim,
-                e eu espero que ainda tenhamos muitos momentos
-                para guardar juntos.
-
-                <br><br>
-
-                Obrigado por todas as risadas, pelos momentos bons
-                e por fazer parte da minha vida.
-
-                <br><br>
-
-                Eu gosto muito de você. ❤️
-            </p>
-
-        </section>
-
-
-        <section class="card">
-
-            <h2>Algumas lembranças nossas 📸</h2>
-
-            <div class="photos">
-
-                <figure class="memory">
-
-                    <!-- FOTO DA DANÇA -->
-                    <img src="danca.jpg" alt="Momento da dança">
-
-                    <figcaption class="caption">
-                        Um momento especial da dança ❤️
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="memory">
-
-                    <!-- FOTO DA PRAIA -->
-                    <img src="praia.jpg" alt="Momento na praia">
-
-                    <figcaption class="caption">
-                        Nosso dia na praia 🏖️
-                    </figcaption>
-
-                </figure>
-
-            </div>
-
-        </section>
-
-
-        <section class="card">
-
-            <h2>E isso é só o começo ✨</h2>
-
-            <p class="message">
-                Ainda quero viver muitos outros momentos com você
-                e, quem sabe, preencher essa página com muitas
-                outras lembranças nossas.
-            </p>
-
-        </section>
-
-
-        <footer>
-            Feito com carinho para você ❤️
-        </footer>
+        <a
+            href="#historia"
+            class="btn"
+        >
+            ✨ Começar ✨
+        </a>
 
     </div>
+
+</section>
+
+
+<!-- =================================
+     HISTÓRIA
+================================= -->
+
+<section
+    class="story"
+    id="historia"
+>
+
+<div class="story-container">
+
+    <div class="kicker">
+        Nossa história
+    </div>
+
+    <h2>
+        Uma história que começou com uma dança...
+    </h2>
+
+    <p class="intro">
+
+        Tudo começou nos ensaios da festa junina da escola.
+
+        A gente acabou forming uma dupla.
+
+        No começo, a gente mal conversava direito,
+        mas fomos passando cada vez mais tempo juntos.
+
+        Quase no final dos ensaios,
+        começamos a conversar mais,
+        ficamos mais próximos,
+        trocamos nossos números
+        e começamos até a ir embora juntos.
+
+    </p>
+
+
+    <div class="timeline">
+
+
+        <!-- APRESENTAÇÃO -->
+
+        <article class="card">
+
+            <span class="dot"></span>
+
+            <div class="date">
+                JUNHO DE 2025
+            </div>
+
+            <h3>
+                Quando tudo começou 💃❤️
+            </h3>
+
+            <p>
+
+                Foi nos ensaios da apresentação
+                da festa junina que nossos caminhos
+                se encontraram.
+
+                O que começou como uma simples dupla
+                foi se tornando algo muito mais especial.
+
+            </p>
+
+
+            <div class="photo">
+                <img src="1000394796.jpg" alt="Apresentação Festa Junina">
+            </div>
+
+        </article>
+
+
+        <!-- PRIMEIRO BEIJO -->
+
+        <article class="card">
+
+            <span class="dot"></span>
+
+            <div class="date">
+                30 DE JUNHO DE 2025
+            </div>
+
+            <h3>
+                O nosso primeiro beijo 💋
+            </h3>
+
+            <p>
+
+                Chegou o dia da apresentação.
+
+                E, no meio de tudo aquilo
+                que tinha começado nos ensaios,
+                aconteceu uma coisa que mudou
+                nossa história:
+
+                <br><br>
+
+                <strong>
+                    nosso primeiro beijo.
+                </strong>
+
+            </p>
+
+        </article>
+
+
+        <!-- PRIMEIRO ENCONTRO -->
+
+        <article class="card">
+
+            <span class="dot"></span>
+
+            <div class="date">
+                NOSSO PRIMEIRO ENCONTRO
+            </div>
+
+            <h3>
+                Nosso primeiro encontro 🛍️
+            </h3>
+
+            <p>
+
+                Depois daquele dia,
+                continuamos conversando.
+
+                E então chegou a hora
+                de sairmos juntos.
+
+                Nosso primeiro encontro
+                foi no shopping.
+
+                E dali vieram muitos outros
+                passeios, conversas,
+                risadas e momentos juntos.
+
+            </p>
+
+
+            <div class="photo">
+                <img src="1000394797.jpg" alt="Foto do Encontro">
+            </div>
+
+        </article>
+
+
+        <!-- NAMORO -->
+
+        <article class="card">
+
+            <span class="dot"></span>
+
+            <div class="date">
+                20 DE AGOSTO DE 2025
+            </div>
+
+            <h3>
+                O dia em que começamos a namorar ❤️
+            </h3>
+
+            <p>
+
+                Depois de tantos momentos juntos,
+                chegou o dia 20 de agosto de 2025.
+
+                O dia em que nossa história
+                ganhou oficialmente um novo capítulo.
+
+                <br><br>
+
+                <strong>
+                    O nosso namoro. ❤️
+                </strong>
+
+            </p>
+
+        </article>
+
+
+        <!-- MÃE -->
+
+        <article class="card">
+
+            <span class="dot"></span>
+
+            <div class="date">
+                UM MOMENTO ESPECIAL
+            </div>
+
+            <h3>
+                Você conhecendo minha mãe 👩‍👧
+            </h3>
+
+            <p>
+
+                Um daqueles momentos que mostram
+                que a pessoa está entrando cada vez
+                mais na nossa vida.
+
+            </p>
+
+
+            <div class="photo">
+                <img src="1000394798.jpg" alt="Júlia com a Mãe">
+            </div>
+
+        </article>
+
+
+        <!-- PRAIA -->
+
+        <article class="card">
+
+            <span class="dot"></span>
+
+            <div class="date">
+                UM DIA PRA GUARDAR
+            </div>
+
+            <h3>
+                Nós dois na praia 🏖️
+            </h3>
+
+            <p>
+
+                Mais uma lembrança entre tantas
+                outras que fazem parte da nossa história.
+
+                Porque, no fim,
+                são esses momentos juntos
+                que tornam tudo tão especial.
+
+            </p>
+
+
+            <div class="photo">
+                <img src="1000394799.jpg" alt="Nós dois na praia">
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     MÚSICA
+================================= -->
+
+<section class="music">
+
+<div class="music-container">
+
+    <div class="spider">
+        🕷️❤️
+    </div>
+
+    <div
+        class="kicker"
+        style="color:#ff9aa2"
+    >
+        Uma música para nós
+    </div>
+
+    <h2>
+        P.S. I LOVE YOU
+    </h2>
+
+    <p>
+
+        Porque algumas músicas parecem dizer
+        aquilo que a gente sente,
+        mesmo sem precisar explicar.
+
+    </p>
+
+
+    <div class="spotify">
+
+        <iframe
+            src="https://open.spotify.com/embed/track/5K3mMpiWtKvCplBl7ov4Q9?utm_source=generator"
+            height="152"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     HOMEM-ARANHA
+================================= -->
+
+<section class="spiderman">
+
+<div class="spiderman-container">
+
+    <div class="spiderman-icon">
+        🕷️
+    </div>
+
+    <div class="kicker">
+        Uma coisa que é a nossa cara
+    </div>
+
+    <h2>
+        Homem-Aranha ❤️💙
+    </h2>
+
+    <p>
+
+        Tem algumas coisas que acabam
+        virando pequenas partes da nossa história.
+
+        <br><br>
+
+        Uma delas é o Homem-Aranha,
+        um personagem que nós dois gostamos.
+
+        <br><br>
+
+        E até virou presente:
+
+        aquela pelúcia de crochê do Homem-Aranha
+        que eu te dei no seu aniversário.
+
+        <br><br>
+
+        Pode parecer uma coisa simples,
+        mas são justamente essas pequenas coisas
+        que fazem uma história ser nossa.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     DECLARAÇÃO FINAL
+================================= -->
+
+<section class="final">
+
+<div class="final-container">
+
+    <div class="spider">
+        🕷️❤️
+    </div>
+
+    <div
+        class="kicker"
+        style="color:#ff9aa2"
+    >
+        E agora...
+    </div>
+
+    <h2>
+        Essa história ainda não acabou. ❤️
+    </h2>
+
+
+    <p class="final-text">
+
+        Meu amor,
+
+        <br><br>
+
+        eu te amo muito.
+
+        Obrigado por cada conversa,
+        cada passeio,
+        cada abraço,
+        cada risada
+        e por todos os momentos
+        que vivemos juntos.
+
+        <br><br>
+
+        Desde aquele primeiro ensaio,
+        quando a gente nem conversava direito,
+        até hoje,
+        você se tornou uma parte
+        muito especial da minha vida.
+
+        <br><br>
+
+        E se eu pudesse voltar para aquele
+        primeiro ensaio e viver tudo novamente,
+        eu escolheria você outra vez.
+
+        <br><br>
+
+        Que essa história continue tendo
+        muitos capítulos,
+        muitos momentos,
+        muitas risadas
+        e muito amor.
+
+        <br><br>
+
+        Porque essa é só uma pequena parte
+        de tudo que ainda podemos viver juntos.
+
+    </p>
+
+
+    <div class="signature">
+
+        Eu te amo, Júlia. ❤️
+
+    </div>
+
+</div>
+
+</section>
+
 
 </body>
 </html>
